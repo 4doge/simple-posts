@@ -1,6 +1,7 @@
 const Post = require('../models/post');
 const errorHandler = require('../utils/errorHandler');
 
+
 exports.getAllPosts = async function (ctx) {
     const posts = await Post.find({}).select('username text');
     ctx.body = {posts: posts};
